@@ -7,11 +7,11 @@ import java.util.List;
 public interface PessoaService {
     PessoaDto createPessoa(PessoaDto pessoaDto);
 
-    PessoaDto getPessoaById(Long pessoaId);
+    PessoaDto getPessoaByCpf(Long cpf);
 
     List<PessoaDto> getAllPessoas();
 
-    PessoaDto updatePessoa(Long pessoaId,PessoaDto updatePessoaDto);
+    PessoaDto updatePessoa(Long cpf,PessoaDto updatePessoaDto);
 
     void deletePessoa(Long pessoaId);
 

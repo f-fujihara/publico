@@ -11,8 +11,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class PessoaDto{
 
-	private Long id;
+	private Long cpf;
 	private String nome;
 	private String sobrenome;
-	private Long cpf;
+
 }

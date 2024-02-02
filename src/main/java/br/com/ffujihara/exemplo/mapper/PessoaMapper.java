@@ -6,18 +6,16 @@ import br.com.ffujihara.exemplo.entity.PessoaEntity;
 public class PessoaMapper {
 	public static PessoaDto mapToPessoaDto(PessoaEntity pessoaEntity) {
 		return new PessoaDto(
-				pessoaEntity.getId(),
+				pessoaEntity.getCpf(),
 				pessoaEntity.getNome(),
-				pessoaEntity.getSobrenome(),
-				pessoaEntity.getCpf()
+				pessoaEntity.getSobrenome()
 		);
 	}
 	public static PessoaEntity mapToPessoaEntity(PessoaDto pessoaDto){
 		return new PessoaEntity(
-				pessoaDto.getId(),
+				pessoaDto.getCpf(),
 				pessoaDto.getNome(),
-				pessoaDto.getSobrenome(),
-				pessoaDto.getCpf()
+				pessoaDto.getSobrenome()
 		);
 	}
 }

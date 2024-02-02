@@ -21,9 +21,9 @@ public class PessoaController {
 		return new ResponseEntity<>(pessoaSalva, HttpStatus.CREATED);
 	}
 
-	@GetMapping("{id}")
-	public ResponseEntity<PessoaDto> getPessoaById(@PathVariable("id") Long pessoaId){
-		PessoaDto pessoaDto = pessoaService.getPessoaById(pessoaId);
+	@GetMapping("{cpf}")
+	public ResponseEntity<PessoaDto> getPessoaById(@PathVariable("cpf") Long cpf){
+		PessoaDto pessoaDto = pessoaService.getPessoaByCpf(cpf);
 		return ResponseEntity.ok(pessoaDto);
 	}
 
@@ -33,14 +33,14 @@ public class PessoaController {
 		return ResponseEntity.ok(pessoas);
 	}
 
-	@PutMapping("{id}")
-	public ResponseEntity<PessoaDto> updatePessoa(@PathVariable("id") Long pessoaId, @RequestBody PessoaDto updatePessoa){
-		PessoaDto updatedPessoa= pessoaService.updatePessoa(pessoaId,updatePessoa);
+	@PutMapping("{cpf}")
+	public ResponseEntity<PessoaDto> updatePessoa(@PathVariable("cpf") Long cpf, @RequestBody PessoaDto updatePessoa){
+		PessoaDto updatedPessoa= pessoaService.updatePessoa(cpf,updatePessoa);
 		return ResponseEntity.ok(updatedPessoa);
 	}
-	@DeleteMapping("{id}")
-	public ResponseEntity<String> deletePessoa(@PathVariable("id") Long pessoaId){
-		pessoaService.deletePessoa(pessoaId);
+	@DeleteMapping("{cpf}")
+	public ResponseEntity<String> deletePessoa(@PathVariable("cpf") Long cpf){
+		pessoaService.deletePessoa(cpf);
 		return ResponseEntity.ok("Pessoa deletada com sucesso");
 	}
 }

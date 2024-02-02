@@ -19,19 +19,18 @@ import lombok.Setter;
 @Entity
 @Table(name = "PESSOAS")
 public class PessoaEntity {
-	
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
+    @Id
+    @Column(nullable = false, name = "CPF", unique = true)
+    private Long cpf;
 	
 	@Column(nullable = false, name = "NOME")
     private String nome;
 	
 	@Column(nullable = false, name = "SOBRENOME")
     private String sobrenome;
-	
-	@Column(nullable = false, name = "CPF", unique = true)
-    private Long cpf;
+
+
     
     
 }
